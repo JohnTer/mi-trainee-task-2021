@@ -8,7 +8,7 @@ routes = web.RouteTableDef()
 
 
 @routes.post('/users/getResult')
-async def get_result(request):
+async def get_result(request: web.Request) -> web.Response:
     raw_poll_id_data: dict[str, str] = await request.json()
     poll_id: str = raw_poll_id_data['poll_id']
     poll = await Poll.query.where(Poll.id == poll_id).gino.first()
@@ -19,7 +19,7 @@ async def get_result(request):
 
 
 @routes.post('/users/poll')
-async def poll(request):
+async def poll(request: web.Request) -> web.Response:
     raw_poll_data: dict[str, str] = await request.json()
     poll_id: str = raw_poll_data['poll_id']
     choice: str = raw_poll_data['choice']
@@ -38,7 +38,7 @@ async def poll(request):
 
 
 @routes.post('/users/createPoll')
-async def create_poll(request):
+async def create_poll(request: web.Request) -> web.Response:
     raw_poll_data: dict[str, str] = await request.json()
 
     poll_id: str = str(uuid4())

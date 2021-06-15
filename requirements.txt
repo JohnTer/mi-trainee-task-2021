@@ -1,0 +1,3 @@
+aiohttp==3.6.2
+gino==1.0.1
+SQLAlchemy==1.4.18

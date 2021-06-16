@@ -4,7 +4,7 @@ import pytest
 
 from aiohttp import http, web
 
-from pollapp.main import init_app
+from pollapp.app import init_app
 from pollapp.db.models import Poll
 
 CASES: list[tuple[dict, int]] = [

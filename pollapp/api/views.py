@@ -36,7 +36,7 @@ async def poll(raw_poll_data: dict[str, str], request: web.Request) -> web.Respo
 
     answers[choice] += 1
     await poll.update(answers=answers).apply()
-    return web.json_response({'status': 'ok'})
+    return web.json_response({'poll_id': poll_id})
 
 
 @routes.post('/users/createPoll')

@@ -4,7 +4,7 @@ from pollapp.api.views import routes
 from pollapp.db.models import db
 
 
-async def create(app_):
+async def create(app_: web.Application):
     await db.gino.create_all()
 
 

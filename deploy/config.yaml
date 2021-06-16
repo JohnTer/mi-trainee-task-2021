@@ -1,0 +1,10 @@
+database:
+  db_driver: postgres
+  db_host: db
+  db_port: 5432
+  db_user: postgres
+  db_password: postgres
+  db_name: pollapp
+api:
+  api_host: 0.0.0.0
+  api_port: 8000

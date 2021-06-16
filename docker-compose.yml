@@ -1,0 +1,27 @@
+version: "3"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./deploy/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    command:  python3 main.py
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - migration
+  migration:
+    build: .
+    command: bash -c "cd pollapp && alembic upgrade head"
+    depends_on:
+      - db
+

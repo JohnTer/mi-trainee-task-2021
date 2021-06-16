@@ -21,7 +21,7 @@ class Settings(object):
 
 def get_config(filepath: str) -> Settings:
     with open(filepath, 'r') as f:
-        yaml_config: dict = yaml.load(f)
+        yaml_config: dict = yaml.load(f, Loader=yaml.FullLoader)
         settings_object: Settings = Settings(
             **(yaml_config['api'] | yaml_config['database']))
     return settings_object

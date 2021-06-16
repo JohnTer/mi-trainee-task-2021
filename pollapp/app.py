@@ -8,11 +8,10 @@ async def create(app_):
     await db.gino.create_all()
 
 
-def init_app(config_object):
+def init_app(config_object: object):
     app = web.Application(middlewares=[db])
 
-    PG_URL = 'postgres://postgres:postgres@localhost/pollapp'
-    db.init_app(app, dict(dsn=PG_URL))
+    db.init_app(app, dict(dsn=config_object.get_db_url()))
     app.router.add_routes(routes)
     app.on_startup.append(create)
 

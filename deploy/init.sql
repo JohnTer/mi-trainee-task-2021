@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS pollapp;    
+CREATE DATABASE pollapp;  

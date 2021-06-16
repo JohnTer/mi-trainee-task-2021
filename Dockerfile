@@ -5,9 +5,8 @@ WORKDIR /project
 
 COPY ./pollapp /project/pollapp
 COPY ./*.py /project/
-COPY ./config.yaml /project/
+COPY ./deploy/config.yaml /project/
+COPY ./deploy/alembic.ini /project/pollapp/
 COPY ./requirements.txt /project/
 
 RUN pip3 install -r requirements.txt
-EXPOSE 8080
-CMD ["python3", "main.py"]

@@ -3,3 +3,5 @@ gino-aiohttp==0.2.0
 aiohttp_validate==1.1.0
 gino==1.0.1
 PyYAML==5.4.1
+alembic==1.6.5
+psycopg2-binary==2.8.6

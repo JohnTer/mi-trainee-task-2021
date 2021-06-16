@@ -1,5 +1,8 @@
 # Простой сервис для онлайн голосования
 
+# ОТВЕТЫ НА ВОПРОСЫ УСЛОЖНЕНИЯ: https://docs.google.com/document/d/1AEt9xGbQ91Nu0K0Z2qJ1BztceUg5o1CrxjGM-Eo-C4Q/edit
+
+
 Сервис реализует API работающее по протоколу HTTP. 
 
 Реализованы методы:

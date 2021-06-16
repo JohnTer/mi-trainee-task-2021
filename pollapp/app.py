@@ -8,7 +8,7 @@ async def create(app_):
     await db.gino.create_all()
 
 
-def init_app():
+def init_app(config_object):
     app = web.Application(middlewares=[db])
 
     PG_URL = 'postgres://postgres:postgres@localhost/pollapp'

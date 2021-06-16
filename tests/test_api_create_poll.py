@@ -5,6 +5,7 @@ import pytest
 from aiohttp import http, web
 
 from pollapp.main import init_app
+from pollapp.db.models import Poll
 
 CASES: list[tuple[dict, int]] = [
     ({
@@ -53,3 +54,4 @@ async def test_create_poll(aiohttp_client, loop, json_body, expected_status):
     client = await aiohttp_client(app)
     resp = await client.post('/users/createPoll', json=json_body)
     assert resp.status == expected_status
+    await Poll.delete.where(True).gino.status()

@@ -4,7 +4,7 @@ from uuid import uuid4
 from aiohttp import web
 from aiohttp_validate import validate
 
-from db.models import Poll
+from pollapp.db.models import Poll
 
 routes = web.RouteTableDef()
 
@@ -57,10 +57,10 @@ async def poll(raw_poll_data: dict[str, str], request: web.Request) -> web.Respo
 @validate(request_schema={
     "type": "object",
     "properties": {
-            "name": {"type": "string"},
+            "name": {"type": "string", "minLength": 1},
             "answers": {"type": "array", "items": {
                 "type": "string"
-            }},
+            },"minItems": 1},
     },
     "required": ["name", "answers"],
     "additionalProperties": False
@@ -74,7 +74,3 @@ async def create_poll(raw_poll_data: dict[str, str], request: web.Request) -> we
 
     await Poll.create(id=poll_id, name=name, answers=answers)
     return web.json_response({'poll_id': poll_id}, status=201)
-
-
-def init_app(app):
-    app.router.add_routes(routes)

@@ -1,7 +1,9 @@
 # Простой сервис для онлайн голосования
 
-## ОТВЕТЫ НА ВОПРОСЫ УСЛОЖНЕНИЯ: https://docs.google.com/document/d/1AEt9xGbQ91Nu0K0Z2qJ1BztceUg5o1CrxjGM-Eo-C4Q/edit
+### ОТВЕТЫ НА ВОПРОСЫ УСЛОЖНЕНИЯ: https://docs.google.com/document/d/1AEt9xGbQ91Nu0K0Z2qJ1BztceUg5o1CrxjGM-Eo-C4Q/edit
 
+Краткая схема сервиса:
+![Screenshot from 2021-06-17 10-59-02](https://user-images.githubusercontent.com/36763228/122356026-14086480-cf5b-11eb-8fd1-f42204dfc029.png)
 
 Сервис реализует API работающее по протоколу HTTP. 
 
